@@ -23,15 +23,15 @@ In addition, this project will include:
 
 WireFrame:
 
+![Alt text](game_overview.png)
+<!--- ![alt text]("./game_overview.png") --->
 
-<!--- ![alt text]("./overview.png") --->
 
 
-![Alt text](overview.png)
 Technologies, Libraries and API's:
 
-Webpack, JavaScript, CSS, HTML
-Phaser
+Webpack, JavaScript, CSS, HTML 
+Phaser 
 Matter.js
 
 
