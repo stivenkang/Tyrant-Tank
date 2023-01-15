@@ -27,6 +27,7 @@ In Tyrant Tank, the users will be able to:
 
 In addition, this project will include:
 * Instructions on how to play the game.
+* Change the terrain from flat land to eventually include hills.
 
 &emsp;
 
