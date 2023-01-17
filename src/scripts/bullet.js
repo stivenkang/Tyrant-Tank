@@ -4,7 +4,10 @@ class Bullet {
         this.y = y;
         this.speed = 5;
         // this.radius = 5
+        this.damage = 20;
     }
 }
 
-module.exports = Bullet;
+
+
+export default Bullet;

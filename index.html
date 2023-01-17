@@ -5,25 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./dist/main.css" />
-    <!-- <script src="./dist/main.js"></script> -->
+    <script src="./dist/main.js"></script>
     <title>Tyrant Tank</title>
 </head>
 <body>
     <div id="root"></div>
-    <link rel="stylesheet" href="src/styles/canvas.scss">
+    <!-- <link rel="stylesheet" href="src/styles/canvas.scss"> -->
 
-    <canvas id="canvas" ></canvas>
-    <script type="text/javascript" src="src/index.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <!-- <canvas id="canvas" ></canvas> -->
+    <!-- <script type="text/javascript" src="src/index.js"></script> -->
 
-    <script src="./dist/main.js"></script>   <!--line 8, head or body?-->
 
-    <!-- <canvas id="gameCanvas" width="800" height="600"></canvas>
-    <script type="text/javascript">
-        const canvas = document.getElementById("gameCanvas");
+    <!-- <script type="application/javascript" src="./dist/main.js"></script>   line 8, head or body? -->
+
+    <canvas id="canvas" width="1280" height="720"></canvas>
+    <!-- <script type="text/javascript">
+        const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
-        document.addEventListener("keydown", keyDownHandler, false);
-        document.addEventListener("keyup", keyUpHandler, false)
+        ctx.fillStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(0, 35);
+        ctx.bezierCurveTo(0, 35, 640, 20, 1280, 35);
+        ctx.lineTo(1280, 720);
+        ctx.lineTo(0, 720);
+        ctx.closePath();
+        ctx.fill();
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+
     </script> -->
 
 

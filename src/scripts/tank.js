@@ -1,23 +1,23 @@
-const Bullet = require("./bullet");
+import Bullet from "./bullet.js";
 
 // need to add functions for position, speed, aimUp, aimDown, move...
 
 class Tank {
     constructor(position, health, aim, speed) {
-        this.position = position;
-        this.health = 100;
-        this.speed = 5;
-        this.fire = fire;
-        this.aimUp = aimUp;
-        this.aimDown = aimDown;
-        this.move = move;
+        // this.position = position;
+        // this.health = 100;
+        // this.speed = 5;
+        // this.fire = fire;
+        // this.aimUp = aimUp;
+        // this.aimDown = aimDown;
+        // this.move = move;
         
         addEventListener("keyDown", this.keyDown)
         addEventListener("keyUp", this.keyUp)
     }
 
     position(x, y) {
-        
+
     }
 
     move(e) {
@@ -33,6 +33,7 @@ class Tank {
     }
 
     aim(e) {
+        // need to add angle variable
         if (e.keyCode === '38') {
             this.aim += 1;
         } else if (e.keyCode === '40') {
@@ -42,11 +43,19 @@ class Tank {
 
     fire() {
         let angle = this.turret.angle;
-        const thisShot = new Bu
     }
 
     takeDamage() {
 
+    }
+
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.arc(200, 200, 50, 0, 2 * Math.PI)
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.stroke();
+        
     }
 
     keyDown = (e) => {
@@ -70,4 +79,4 @@ class Tank {
 
 
 
-module.exports = Tank;
+export default Tank;

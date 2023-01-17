@@ -2,11 +2,24 @@
 
 // import example from './scripts/example'
 
-const canvas = document.getElementById("canvas");
-let ctx = canvas.getContext("2d");
+import Tank from "./scripts/tank.js";
+import Bullet from "./scripts/bullet.js";
+import Terrain from "./scripts/terrain.js";
+import Game from "./scripts/game.js";
 
-// const width = canvas.width = 1280;
-// const height = canvas.height = 720;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    const width = canvas.width = 1280;
+    const height = canvas.height = 720;
+
+    const game = new Game(ctx);
+
+});
+
+
+
 
 // let score = 0
 // let gameFrame = 0
@@ -20,50 +33,22 @@ let ctx = canvas.getContext("2d");
 // }
 
 
-let gameLoop = setInterval(function() {
-    //update game logic
-    // render game on canvas
+// let gameLoop = setInterval(function() {
+//     //update game logic
+//     // render game on canvas
 
-}, 1000/60)
+// }, 1000/60)
 
-let tankX = 100; // initial x position
-let tankY = 100; // initial y position
-let tankSpeed = 5;
+// let tankX = 100; // initial x position
+// let tankY = 100; // initial y position
+// let tankSpeed = 5;
 
-let enemyX = 200;
-let enemyY = 200;
-
-document.addEventListener("keydown", function(event) {
-    if (event.code === "ArrowLeft") {
-        tankX -= tankSpeed;
-    } else if (event.code === "ArrowRight") {
-        tankX += tankSpeed;
-    } else if (event.code === "ArrowUp") {
-        
-    } else if (event.code === "ArrowDown") {
-
-    }
-});
-
-function render() {
-    ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
-    ctx.fillRect(tankX, tankY, 50, 30);
-    // tank size set to 50px wide, 30px tall
-    ctx.fillRect(enemyX, enemyY, 50, 30);
-}
+// let enemyX = 200;
+// let enemyY = 200;
 
 
 
 
-
-
-
-// function gameLoop() {
-//     // update game logic, render game on canvas, handle user input, move tanks, detect collisions, etc
-
-//     requestAnimationFrame(gameLoop);
-// }
-// gameLoop()
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     const root = document.querySelector('#root')
@@ -94,3 +79,11 @@ function render() {
 //     healthBar.show(context);
 //     requestAnimationFrame(frame);
 // }
+
+
+// Example 
+// document.addEventListener("DOMContentLoaded", () => {
+//     const game = new Game();
+//     const rootEl = document.querySelector(".ttt");
+//     new View(game, rootEl);
+// });

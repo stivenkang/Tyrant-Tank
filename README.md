@@ -34,7 +34,6 @@ In addition, this project will include:
 ## Technologies, Libraries and API's:
 
 * Webpack, JavaScript, CSS, HTML
-* Matter.js
 
 &emsp;
 
