@@ -7,8 +7,8 @@
 // }
 
 #canvas {
-    margin: 0;
-    padding-top: 0;
+    margin: 35px;
+    padding-top: 0px;
     box-sizing: border-box;
     height: 720px;
     width: 1280px;
@@ -18,17 +18,19 @@
     // left: 50%;
     // transform: translate(-50%, 50%);
     // background: blue($color: #000000);
-    max-width: 100%;
-    max-height: 100%;
+    // max-width: 100%;
+    // max-height: 100%;
 
     background-image: url("../images/simple-landscape.jpeg");
     background-repeat: no-repeat;
+    
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    // width: 100vw;
+    // height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+

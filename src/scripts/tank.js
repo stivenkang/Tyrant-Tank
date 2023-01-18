@@ -1,48 +1,62 @@
 import Bullet from "./bullet.js";
-
-// need to add functions for position, speed, aimUp, aimDown, move...
+import BulletController from "./bulletController.js";
 
 class Tank {
-    constructor(position, health, aim, speed) {
-        // this.position = position;
-        // this.health = 100;
-        // this.speed = 5;
-        // this.fire = fire;
-        // this.aimUp = aimUp;
-        // this.aimDown = aimDown;
+    constructor(health, speed, bulletController, aim, position = [20, 300]) {
+        this.position = position;
+        this.health = health || 100;
+        this.speed = speed || 5;
+        // this.shoot = shoot;
+        this.aim = aim || 45;
         // this.move = move;
+        this.x = position[0];
+        this.y = position[1];
+        this.bc = bulletController;
+        this.radius = 20;
         
-        addEventListener("keyDown", this.keyDown)
-        addEventListener("keyUp", this.keyUp)
+        // this.game = game;
+        // this.bullets = [];
+        // this.shooting = false;
+        
+        addEventListener("keydown", this.keyDown)
+        addEventListener("keyup", this.keyUp)
     }
 
-    position(x, y) {
+    // position() {
 
-    }
+    // }
 
-    move(e) {
-        // need to incorporate while (left border > this.position < right border)
-
-        if (e.keyCode === '37') {
-            // left
-            this.position -= this.speed
-        } else if (e.keyCode === '39') {
-            // right
-            this.position += this.speed
+    move() {
+        if (this.leftPressed) {
+            this.x -= this.speed;
+        }
+        if (this.rightPressed) {
+            this.x += this.speed;
         };
+        this.position = Math.max(0, Math.min(this.position, this.width));
     }
 
-    aim(e) {
+    aim() {
         // need to add angle variable
-        if (e.keyCode === '38') {
+        if (this.upPressed) {
             this.aim += 1;
-        } else if (e.keyCode === '40') {
+        }
+        if (this.downPressed) {
             this.aim -= 1;
         }
     }
 
-    fire() {
-        let angle = this.turret.angle;
+    shoot() {
+        if (this.spacePressed) {
+            const speed = 15;
+            const damage = 20
+            const bulletX = this.x + this.radius;
+            const bulletY = this.y;
+            this.bc.shoot(bulletX, bulletY, speed)
+            // this.shooting = true;
+            // const bullet = new Bullet(this.game, this.x, this.y);
+            // this.bullets.push(bullet);
+        }
     }
 
     takeDamage() {
@@ -51,27 +65,29 @@ class Tank {
 
     draw(ctx) {
         ctx.beginPath();
-        ctx.arc(200, 200, 50, 0, 2 * Math.PI)
-        ctx.fillStyle = "green";
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+        ctx.fillStyle = "purple";
         ctx.fill();
         ctx.stroke();
-        
+        this.move();
+        this.shoot();
     }
 
     keyDown = (e) => {
         e.preventDefault()
-        if (e.code === "37") this.leftPressed = true;
-        if (e.code === "39") this.rightPressed = true;
-        if (e.code === "38") this.upPressed = true;
-        if (e.code === "40") this.downPressed = true;
+        console.log(e.code)
+        if (e.code === "ArrowLeft") this.leftPressed = true;
+        if (e.code === "ArrowRight") this.rightPressed = true;
+        if (e.code === "ArrowUp") this.upPressed = true;
+        if (e.code === "ArrowDown") this.downPressed = true;
         if (e.code === "Space") this.spacePressed = true;
     }
     
     keyUp = (e) => {
-        if (e.code === "37") this.leftPressed = false;
-        if (e.code === "39") this.rightPressed = false;
-        if (e.code === "38") this.upPressed = false;
-        if (e.code === "40") this.downPressed = false;
+        if (e.code === "ArrowLeft") this.leftPressed = false;
+        if (e.code === "ArrowRight") this.rightPressed = false;
+        if (e.code === "ArrowUp") this.upPressed = false;
+        if (e.code === "ArrowDown") this.downPressed = false;
         if (e.code === "Space") this.spacePressed = false;
     }
 }

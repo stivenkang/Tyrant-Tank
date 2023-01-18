@@ -1,22 +1,58 @@
-//Example
-
-// import example from './scripts/example'
-
 import Tank from "./scripts/tank.js";
 import Bullet from "./scripts/bullet.js";
 import Terrain from "./scripts/terrain.js";
 import Game from "./scripts/game.js";
+import BulletController from "./scripts/bulletController.js";
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.getElementById("canvas");
-    let ctx = canvas.getContext("2d");
-    const width = canvas.width = 1280;
-    const height = canvas.height = 720;
+// document.addEventListener("DOMContentLoaded", function() {
+//     const canvas = document.getElementById("canvas");
+//     let ctx = canvas.getContext("2d");
+//     const width = canvas.width = 1280;
+//     const height = canvas.height = 720;
 
-    const game = new Game(ctx);
+//     const game = new Game(ctx);
+//     // setInterval(() => game.update(), 1000/60);
+//     requestAnimationFrame(() => game.render());
 
+// });
+
+
+// all code in index.js should go inside of addEventListener
+// need to eventually refactor code to use DOMContentLoaded instead of below
+
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const width = canvas.width = 1280;
+const height = canvas.height = 720;
+const bc = new BulletController(ctx);
+const tank = new Tank(100, 5, bc);
+const bullet = new Bullet(tank.x, tank.y, 15, 20);
+// const terrain = new Terrain();
+
+
+const game = new Game(ctx, {
+    canvas: canvas,
+    playerTank: tank,
+    bulletController: bc,
+    bullet: bullet
 });
+
+
+function update() {
+    // Tank.move();
+    ctx.clearRect(0, 0, width, height)
+    game.render()
+    
+    // tank.shoot()
+    // bullet.draw(ctx)
+}
+
+setInterval(update, 1000/60);
+// requestAnimationFrame(() => game.render());
+
+
 
 
 
@@ -32,30 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
 //     click: false
 // }
 
-
-// let gameLoop = setInterval(function() {
-//     //update game logic
-//     // render game on canvas
-
-// }, 1000/60)
-
-// let tankX = 100; // initial x position
-// let tankY = 100; // initial y position
-// let tankSpeed = 5;
-
-// let enemyX = 200;
-// let enemyY = 200;
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const root = document.querySelector('#root')
-//     //console.log('Example')
-
-//     new Example(root);
-// })
 
 
 
@@ -81,9 +93,37 @@ document.addEventListener("DOMContentLoaded", function() {
 // }
 
 
+
+
 // Example 
 // document.addEventListener("DOMContentLoaded", () => {
 //     const game = new Game();
 //     const rootEl = document.querySelector(".ttt");
 //     new View(game, rootEl);
 // });
+
+
+// class View {
+//     constructor(game, el) {
+//       this.game = game;
+//       this.el = el;
+//       this.setupBoard()
+//       this.bindEvents()
+//       this.handleClick = this.handleClick.bind(this)
+//     }
+  
+//     setupBoard() {
+//       const ul = document.createElement("ul");
+//       for (let row = 0; row < 3; row++) {
+//         for (let col = 0; col < 3; col++) {
+//           const li = document.createElement("li");
+//           li.dataset.pos = JSON.stringify([row, col])
+//           ul.append(li);
+//         }
+//       }
+//       this.el.append(ul)
+//     }
+//     bindEvents() {}
+//     handleClick(e) {}
+//     makeMove(square) {}
+//   }

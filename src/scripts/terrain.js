@@ -1,5 +1,6 @@
 import Tank from "./tank.js";
 import Bullet from "./bullet.js";
+import Game from "./game.js";
 
 class Terrain {
     constructor(width, height, numSlopes, steepness) {
@@ -7,7 +8,7 @@ class Terrain {
         this.height = height;
         this.numSlopes = 4;
         this.steepness = steepness;
-        this.tank = new Tank();
+        this.game = new Game();
         
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
