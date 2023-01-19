@@ -8,14 +8,23 @@ class Terrain {
         this.height = height;
         this.numSlopes = 4;
         this.steepness = steepness;
-        this.game = new Game();
         
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
 
     }
 
-    createLandscape() {
+    draw(ctx) {
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, 594, 1280, 255)
+        // ctx.beginPath();
+        // ctx.moveTo(0, 35);
+        // ctx.lineTo(1280, 35);
+        // ctx.lineTo(0, 720);
+        // ctx.closePath();
+        // ctx.fill();
+
+        
         // const HORIZON_DEPTH = 0.5;
         // const getRandomInt = function (min, max) {
         //     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -50,28 +59,16 @@ class Terrain {
         // ctx.moveTo(canvas.width, canvas.height);
         // ctx.lineTo(0, canvas.height);
 
-
-
-        ctx.fillStyle = "green";
-        ctx.beginPath();
-        ctx.moveTo(0, 35);
-        ctx.bezierCurveTo(0, 35, 640, 20, 1280, 35);
-        ctx.lineTo(1280, 720);
-        ctx.lineTo(0, 720);
-        ctx.closePath();
-        ctx.fill();
-
-
         // calcedPoints = ctx.curve(points);
 
-        
     }
 
     render() {
         ctx.clearRect(0, 0, canvas.clientWidth, canvas.height);
-        ctx.fillRect(tankX, tankY, 50, 30);
+
+        // ctx.fillRect(tankX, tankY, 50, 30);
         // tank size set to 50px wide, 30px tall
-        ctx.fillRect(enemyX, enemyY, 50, 30);
+        // ctx.fillRect(enemyX, enemyY, 50, 30);
     }
 
     // need method to render terrain onto canvas

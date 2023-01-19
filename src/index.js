@@ -28,14 +28,15 @@ const height = canvas.height = 720;
 const bc = new BulletController(ctx);
 const tank = new Tank(100, 5, bc);
 const bullet = new Bullet(tank.x, tank.y, 10, 10, 20);
-// const terrain = new Terrain();
+const terrain = new Terrain();
 
 
 const game = new Game(ctx, {
     canvas: canvas,
     playerTank: tank,
     bulletController: bc,
-    bullet: bullet
+    bullet: bullet,
+    terrain: terrain
 });
 
 

@@ -9,6 +9,7 @@ class Game {
         this.playerTank = options.playerTank;
         this.bulletController = options.bulletController;
         this.bullet = options.bullet;
+        this.terrain = options.terrain;
         this.start();        
     }
 
@@ -34,6 +35,7 @@ class Game {
         bullets.forEach(bullet => {
             bullet.draw(this.ctx)
         });
+        this.terrain.draw(this.ctx)
     }
 
     // gameLoop() {
