@@ -34,9 +34,6 @@ class Game {
         bullets.forEach(bullet => {
             bullet.draw(this.ctx)
         });
-
-        // this.bullet.draw(this.ctx)
-        // this.playerTank.shoot();
     }
 
     // gameLoop() {

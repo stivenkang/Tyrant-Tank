@@ -12,7 +12,6 @@ import BulletController from "./scripts/bulletController.js";
 //     const height = canvas.height = 720;
 
 //     const game = new Game(ctx);
-//     // setInterval(() => game.update(), 1000/60);
 //     requestAnimationFrame(() => game.render());
 
 // });
@@ -28,7 +27,7 @@ const width = canvas.width = 1280;
 const height = canvas.height = 720;
 const bc = new BulletController(ctx);
 const tank = new Tank(100, 5, bc);
-const bullet = new Bullet(tank.x, tank.y, 15, 20);
+const bullet = new Bullet(tank.x, tank.y, 10, 10, 20);
 // const terrain = new Terrain();
 
 
@@ -41,16 +40,14 @@ const game = new Game(ctx, {
 
 
 function update() {
-    // Tank.move();
     ctx.clearRect(0, 0, width, height)
     game.render()
-    
-    // tank.shoot()
-    // bullet.draw(ctx)
 }
 
 setInterval(update, 1000/60);
-// requestAnimationFrame(() => game.render());
+
+
+
 
 
 

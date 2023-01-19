@@ -9,8 +9,8 @@ class Bullet {
         this.speedy = speedy;
         // this.radius = 5
         this.damage = damage || 20;
-        this.width = 10;
-        this.height = 10;
+        this.width = 5;
+        this.height = 5;
         this.color = "black"
         this.ctx = ctx;
 

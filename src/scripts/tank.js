@@ -2,7 +2,7 @@ import Bullet from "./bullet.js";
 import BulletController from "./bulletController.js";
 
 class Tank {
-    constructor(health, speed, bulletController, aim, position = [20, 300]) {
+    constructor(health, speed, bulletController, aim, position = [20, 573]) {
         this.position = position;
         this.health = health || 100;
         this.speed = speed || 5;

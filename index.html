@@ -9,39 +9,28 @@
     <title>Tyrant Tank</title>
 </head>
 <body>
-    <!-- <div id="root"></div> -->
     <!-- <link rel="stylesheet" href="src/styles/canvas.scss"> -->
 
     <canvas id="canvas" ></canvas>
-
+    <div class="line" >
+        <div class="bottom"></div>
+    </div>
 
     <!-- <canvas id="canvas" width="1280" height="720"></canvas> -->
     <script type="text/javascript">
-        // function draws() {
-        //     const ctx = document.getElementById("canvas").getContext("2d");
-        //     ctx.moveTo(0, 35);
-        //     ctx.lineTo(1280, 500);
-        //     ctx.fillStyle = "green";
-        //     ctx.fill()
-        //     ctx.stroke();
-        // }
-        // window.onload.draws
-
-
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
-        ctx.fillStyle = "green";
-        ctx.beginPath();
-        ctx.moveTo(0, 35);
-        ctx.bezierCurveTo(0, 35, 640, 20, 1280, 35);
-        ctx.lineTo(1280, 720);
-        ctx.lineTo(0, 720);
-        ctx.closePath();
-        ctx.fill();
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = "black";
-        ctx.stroke();
-
+        // ctx.fillStyle = "green";
+        // ctx.beginPath();
+        // ctx.moveTo(0, 35);
+        // ctx.bezierCurveTo(0, 35, 640, 20, 1280, 35);
+        // ctx.lineTo(1280, 720);
+        // ctx.lineTo(0, 720);
+        // ctx.closePath();
+        // ctx.fill();
+        // ctx.lineWidth = 1;
+        // ctx.strokeStyle = "black";
+        // ctx.stroke();
     </script>
 
    <script src="./dist/main.js"></script>
