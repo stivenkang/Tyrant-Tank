@@ -26,7 +26,7 @@ const ctx = canvas.getContext("2d");
 const width = canvas.width = 1280;
 const height = canvas.height = 720;
 const bc = new BulletController(ctx);
-const tank = new Tank(100, 5, bc);
+const tank = new Tank(100, 5, bc, 45);
 const bullet = new Bullet(tank.x, tank.y, 10, 10, 20);
 const terrain = new Terrain();
 

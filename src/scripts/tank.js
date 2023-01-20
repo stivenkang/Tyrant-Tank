@@ -2,7 +2,7 @@ import Bullet from "./bullet.js";
 import BulletController from "./bulletController.js";
 
 class Tank {
-    constructor(health, speed, bulletController, aim, position = [20, 573]) {
+    constructor(health, speed, bulletController, aim, position = [20, 593]) {
         this.position = position;
         this.health = health || 100;
         this.speed = speed || 5;
@@ -13,6 +13,8 @@ class Tank {
         this.y = position[1];
         this.bc = bulletController;
         this.radius = 20;
+
+        this.angle = 0;
         
         // this.game = game;
         // this.bullets = [];
@@ -36,14 +38,17 @@ class Tank {
         this.position = Math.max(0, Math.min(this.position, this.width));
     }
 
-    aim() {
+    aim(angle) {
+        // debugger
         // need to add angle variable
+        this.angle = angle;
         if (this.upPressed) {
-            this.aim += 1;
+            this.angle += 1;
         }
         if (this.downPressed) {
-            this.aim -= 1;
+            this.angle -= 1;
         }
+        console.log(angle);
     }
 
     shoot() {
@@ -65,11 +70,19 @@ class Tank {
 
     draw(ctx) {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+        // ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
+        ctx.arc(this.x, this.y, this.radius, Math.PI, 2 * Math.PI)
+
+        // for semi circle as tank, arguments for arc are (this.x, this.y, this.radius, Math.PI, 2 * Math.PI)
         ctx.fillStyle = "purple";
         ctx.fill();
         ctx.stroke();
+
+        ctx.fillStyle = "purple";
+        ctx.fillRect(this.x + this.radius, this.y - 6, 8, 4)
+
         this.move();
+        // this.aim(angle);
         this.shoot();
     }
 

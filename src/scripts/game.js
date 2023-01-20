@@ -53,7 +53,9 @@ export default Game;
 // 1) Tank display ^
 // 2) tank move ^
 // 3) tank shoot 
-    // need to add a delay
+    // add aim function which takes an argument (?) of angle
+    // have angle adjust with up or down arrow keys
+    // refactor code so that tank can shoot leftward or rightward depending on the angle
 // 4) tank gravity 
 // 5) tank takes damage 
 // 6) tank aim 
