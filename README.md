@@ -5,7 +5,7 @@
 
 This is a recreation of the classic game of "Tanks". It is a turn-based game with the primary objective of destroying your opponents by blasting your way to victory. Players can navigate over the terrain in order to gain optimal positioning to defeat their opponents. The tank will be able to move left and right using their respective arrow keys and also adjust the aim/angle of fire using the up and down arrow keys. The level of power can also be adjusted before taking the shot. Points will be earned based on the number of kills and whether they come out victorious. At the end of the round, players will be able to upgrade their tank in preparation for the next round. Players will be able to challenge their friends in a duel or play against AI's of varying difficulties to prove their skills in order to be crowned the Tyrant Tank.
 
-Check out this project here: stivenkang.github.io/Tyrant-Tank/
+Check out this project here: https://stivenkang.github.io/Tyrant-Tank/
 
 &emsp;
 
